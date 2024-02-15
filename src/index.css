@@ -237,7 +237,7 @@ span{
 }
 .dark-mode-bg {
   min-height: 100vh;
-  padding:1rem;
+  padding-bottom:1rem;
   background-color: hsl(207, 26%, 17%);
   color: white;
   height: 100%;
