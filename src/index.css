@@ -116,7 +116,7 @@ ul {
   margin-top: 20px;
 }
 
-span{
+span {
   font-weight: 600;
 }
 
@@ -239,16 +239,16 @@ span{
 }
 .dark-mode-bg {
   padding-bottom: 2rem;
+  min-height: 100vh;
+  padding-bottom: 1rem;
   background-color: hsl(207, 26%, 17%);
   color: white;
-  
 }
 .dark-mode-info-bg {
   height: 100vh;
   padding-bottom: 2rem;
   background-color: hsl(207, 26%, 17%);
   color: white;
-  
 }
 .back-btn-dark {
   display: flex;
@@ -352,15 +352,14 @@ span{
     justify-content: space-between;
     width: 900px;
   }
- 
+
   .country-info {
     display: flex;
     font-size: 0.7rem;
     gap: 6rem;
     justify-content: space-between;
-   
   }
- 
+
   .border-container {
     display: flex;
     align-items: baseline;
