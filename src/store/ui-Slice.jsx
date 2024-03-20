@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const uiSlice = createSlice({
   name: "ui",
-  initialState: { countries: [], theme: false,},
+  initialState: { countries: [], theme: false,loading:true,error:false},
   reducers: {
     replaceCountry(state, action) {
       state.countries = action.payload.countries;
@@ -13,6 +13,12 @@ const uiSlice = createSlice({
       } else {
         state.theme = false;
       }
+    },
+    dataStatus(state) {
+      state.loading = false;
+    },
+    errorStatus(state) {
+      state.error = true;
     },
 
   },

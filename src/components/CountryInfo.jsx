@@ -11,6 +11,8 @@ let baseUrl = "https://restcountries.com/v3.1/name/";
 export default function CountryInfo() {
   const state = useSelector((state) => state.ui.theme);
   const [country, setCountry] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState("");
 
   const { name } = useParams();
 
@@ -19,13 +21,15 @@ export default function CountryInfo() {
       try {
         const response = await fetch(baseUrl.concat(name));
         if (!response.ok) {
-          throw new Error("Fetching data failed");
+          throw new Error("Fetching data failed...");
         }
         const data = await response.json();
         console.log(data);
         setCountry(data);
+        setIsLoading(false);
       } catch (error) {
-        console.error("Fetching data failed:", error);
+        setIsLoading(false);
+        setError(error.message);
       }
     };
 
@@ -33,8 +37,9 @@ export default function CountryInfo() {
   }, [name]);
   return (
     <>
-      <div className={state ? "dark-mode-bg" : ""}>
+      <div className={state ? "dark-mode-info-bg" : ""}>
         <Header />
+
         <section className="countryinfo-section">
           <Link to={"/"} className="link-info">
             <div className={state ? "back-btn-dark" : "back-btn-container"}>
@@ -49,6 +54,8 @@ export default function CountryInfo() {
               </button>
             </div>
           </Link>
+          {isLoading && !error && <h4>Loading...</h4>}
+          {error && !isLoading && <h4>{error}</h4>}
 
           {country.map((item) => (
             <div key={item.population} className="country-info-container">

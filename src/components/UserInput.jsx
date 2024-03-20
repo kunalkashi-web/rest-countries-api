@@ -35,12 +35,13 @@ export default function UserInput() {
   return (
     <section className="search-section">
       <div className="country-search-box">
-        <form onSubmit={getCountryByName2} className={state ? "dark-input-bg" : ""}>
+        <form id="search-bar" onSubmit={getCountryByName2} className={state ? "dark-input-bg" : ""}>
           <div>
             <img
               className="search-icon"
               src={state ? darkSearchIcon:lightSearchIcon}
               alt=""
+              id="search-bar"
             />
           </div>
 
@@ -48,6 +49,7 @@ export default function UserInput() {
             onChange={getCountryByName}
             
             type="text"
+            id="search-bar"
             name="name"
             placeholder="Search for a country..."
             className={state ? "dark-input-bg" : ""}
