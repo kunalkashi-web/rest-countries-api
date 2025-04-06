@@ -1,9 +1,10 @@
+/* eslint-disable react/prop-types */
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
+
 export default function Article({ flags, name, population, region, capital }) {
   const state = useSelector((state) => state.ui.theme);
 
-  
   return (
     <>
       <Link to={`/${name.common}`} className="link-info">
