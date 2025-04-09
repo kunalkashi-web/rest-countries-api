@@ -1,11 +1,9 @@
 import { uiActions } from "./ui-Slice.jsx";
 
 export const fetchCountriesData = () => {
-
   return async (dispatch) => {
-   
     const fetchData = async () => {
-      const response = await fetch("https://restcountries.com/v3.1/all");
+      const response = await fetch("https://restcountries.com/v2/all");
       if (!response.ok) {
         dispatch(uiActions.errorStatus());
       }
@@ -21,4 +19,3 @@ export const fetchCountriesData = () => {
     }
   };
 };
-
