@@ -1,8 +1,19 @@
-# React + Vite
+# React Countries App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### See useful information related to all countries like currency, native names, border countries etc.
+We are using REST Countries API for getting data related to a country.
 
-Currently, two official plugins are available:
+### [Live Preview](https://rest-countries-api-mu-bay.vercel.app/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
+ - Show detailed information about a country, 
+ - Live search and region based filtering options. 
+ - Light and Dark mode
+
+### Tech Stack
+- ReactJS
+- React router
+- Axios for HTTP Requests
+- HTML
+- CSS
+- Javascript.
